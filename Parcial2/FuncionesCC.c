@@ -31,7 +31,7 @@ void freeCentroComercial(local_t ** centroComercial, int numPisos){
 }
 
 void buscarNombre(local_t ** centroComercial, int numPisos, int numLocalesxPiso, char nombre[35]){
-	int i, j;
+	int i, j, encontrado = 0;
     for(i = 0; i < numPisos; i++){
         for(j = 0; j < numLocalesxPiso; j++){
             if(strcmp(centroComercial[i][j].nombre, nombre) == 0 && centroComercial[i][j].estado == OCUPADO){
@@ -43,7 +43,9 @@ void buscarNombre(local_t ** centroComercial, int numPisos, int numLocalesxPiso,
             }
         }
     }
-    printf("No se encontraron locales con ese nombre\n");
+    if(!encontrado){
+        printf("No se encontraron locales con ese nombre\n");
+    }
 }
 
 void buscarPiso(local_t ** centroComercial, int numPisos, int numLocalesxPiso, int piso){
@@ -72,7 +74,7 @@ void buscarPiso(local_t ** centroComercial, int numPisos, int numLocalesxPiso, i
 
 void modificarEmpleados(local_t ** centroComercial, int numPisos, 
                         int numLocalesxPiso, char nombre[35], int opcion){
-    int i, j;
+    int i, j, encontrado = 0;
     for(i = 0; i < numPisos; i++){
         for(j = 0; j < numLocalesxPiso; j++){
             if(strcmp(centroComercial[i][j].nombre, nombre) == 0 && centroComercial[i][j].estado == OCUPADO){
@@ -84,9 +86,28 @@ void modificarEmpleados(local_t ** centroComercial, int numPisos,
                     centroComercial[i][j].numEmpleados--;
                     printf("Empleado despedido\n");
                 }
+                encontrado = 1;
                 break;
             }
         }
     }
-    printf("No se encontraron locales con ese nombre\n");
+    if(!encontrado){
+        printf("No se encontraron locales con ese nombre\n");
+    }
+}
+
+void eliminarLocal(local_t ** centroComercial, int numPisos, int numLocalesxPiso, char nombre[35]){
+    int i, j, encontrado = 0;
+    for(i = 0; i < numPisos; i++){
+        for(j = 0; j < numLocalesxPiso; j++){
+            if(strcmp(centroComercial[i][j].nombre, nombre) == 0 && centroComercial[i][j].estado == OCUPADO){
+                centroComercial[i][j].estado == LIBRE;
+                encontrado = 1;
+                break;
+            }
+        }
+    }
+    if(!encontrado){
+        printf("No se encontraron locales con ese nombre\n");
+    }
 }
