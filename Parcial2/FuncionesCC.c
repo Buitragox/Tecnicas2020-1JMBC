@@ -111,3 +111,13 @@ void eliminarLocal(local_t ** centroComercial, int numPisos, int numLocalesxPiso
         printf("No se encontraron locales con ese nombre\n");
     }
 }
+
+int totalEmpleados(local_t ** centroComercial, int piso, int numLocalesxPiso){
+    if(numLocalesxPiso == 0){
+        return 0;
+    }
+    else{
+        int empleados = centroComercial[piso][numLocalesxPiso - 1].numEmpleados;
+        return empleados + totalEmpleados(centroComercial, piso, numLocalesxPiso - 1);
+    }
+}
