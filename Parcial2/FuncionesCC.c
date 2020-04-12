@@ -34,7 +34,7 @@ void buscarNombre(local_t ** centroComercial, int numPisos, int numLocalesxPiso,
 	int i, j;
     for(i = 0; i < numPisos; i++){
         for(j = 0; j < numLocalesxPiso; j++){
-            if(strcmp(centroComercial[i][j].nombre, nombre) == 0 && !centroComercial[i][j].estado){
+            if(strcmp(centroComercial[i][j].nombre, nombre) == 0 && centroComercial[i][j].estado == OCUPADO){
                 printf("ID: %d\n", centroComercial[i][j].id);
                 printf("Piso: %d\n", centroComercial[i][j].piso);
                 printf("Local numero: %d\n", centroComercial[i][j].numLocal);
@@ -44,4 +44,28 @@ void buscarNombre(local_t ** centroComercial, int numPisos, int numLocalesxPiso,
         }
     }
     printf("No se encontraron locales con ese nombre\n");
+}
+
+void buscarPiso(local_t ** centroComercial, int numPisos, int numLocalesxPiso, int piso){
+    int i, encontrado = 0;
+    piso--;
+    if(piso < numPisos){
+        for(i = 0; i < numLocalesxPiso; i++){
+            if(centroComercial[piso][i].estado == OCUPADO){
+                printf("Local %s\n", centroComercial[piso][i].nombre);
+                printf("ID: %d\n", centroComercial[piso][i].id);
+                printf("Piso: %d\n", centroComercial[piso][i].piso);
+                printf("Local numero: %d\n", centroComercial[piso][i].numLocal);
+                printf("Numero de empleados: %d\n", centroComercial[piso][i].numEmpleados);
+                printf("================================");
+                encontrado = 1;
+            }
+        }
+        if(!encontrado){
+            printf("No se encontraron locales en este piso\n");
+        }
+    }
+    else{
+        printf("Piso invalido\n");
+    } 
 }
