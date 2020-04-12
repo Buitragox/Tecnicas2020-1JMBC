@@ -69,3 +69,24 @@ void buscarPiso(local_t ** centroComercial, int numPisos, int numLocalesxPiso, i
         printf("Piso invalido\n");
     } 
 }
+
+void modificarEmpleados(local_t ** centroComercial, int numPisos, 
+                        int numLocalesxPiso, char nombre[35], int opcion){
+    int i, j;
+    for(i = 0; i < numPisos; i++){
+        for(j = 0; j < numLocalesxPiso; j++){
+            if(strcmp(centroComercial[i][j].nombre, nombre) == 0 && centroComercial[i][j].estado == OCUPADO){
+                if(opcion == 5){
+                    centroComercial[i][j].numEmpleados++;
+                    printf("Empleado contratado\n");
+                }
+                else{
+                    centroComercial[i][j].numEmpleados--;
+                    printf("Empleado despedido\n");
+                }
+                break;
+            }
+        }
+    }
+    printf("No se encontraron locales con ese nombre\n");
+}
