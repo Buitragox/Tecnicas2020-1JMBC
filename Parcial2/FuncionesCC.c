@@ -22,6 +22,15 @@ local_t ** crearCentroComercial(int numPisos, int numLocalesxPiso){
     return centroComercial;
 }
 
+void añadirLocal(local_t ** centroComercial, int piso, int numLocal, char nombre[35], int empleados){
+    strcpy(centroComercial[piso][numLocal].nombre, nombre);
+    centroComercial[piso][numLocal].id = piso * 1000 + numLocal;
+    centroComercial[piso][numLocal].piso = piso;
+    centroComercial[piso][numLocal].numLocal = numLocal;
+    centroComercial[piso][numLocal].estado = OCUPADO;
+    centroComercial[piso][numLocal].numEmpleados = empleados;
+}
+
 void freeCentroComercial(local_t ** centroComercial, int numPisos){
     int i;
     for(i = 0; i < numPisos; i++){
@@ -51,7 +60,7 @@ void buscarNombre(local_t ** centroComercial, int numPisos, int numLocalesxPiso,
 void buscarPiso(local_t ** centroComercial, int numPisos, int numLocalesxPiso, int piso){
     int i, encontrado = 0;
     piso--;
-    if(piso < numPisos){
+    if(piso < numPisos && piso >= 0){
         for(i = 0; i < numLocalesxPiso; i++){
             if(centroComercial[piso][i].estado == OCUPADO){
                 printf("Local %s\n", centroComercial[piso][i].nombre);
