@@ -12,6 +12,7 @@ local_t ** crearCentroComercial(int numPisos, int numLocalesxPiso){
             }
             for(j = 0; j < numLocalesxPiso; j++){
                 centroComercial[i][j].estado = LIBRE;
+                centroComercial[i][j].numEmpleados = 0;
             }
         }
     }
@@ -112,6 +113,7 @@ void eliminarLocal(local_t ** centroComercial, int numPisos, int numLocalesxPiso
         for(j = 0; j < numLocalesxPiso; j++){
             if(strcmp(centroComercial[i][j].nombre, nombre) == 0 && centroComercial[i][j].estado == OCUPADO){
                 centroComercial[i][j].estado = LIBRE;
+                centroComercial[i][j].numEmpleados = 0;
                 encontrado = 1;
                 break;
             }
