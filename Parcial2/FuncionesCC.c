@@ -48,6 +48,7 @@ void buscarNombre(local_t ** centroComercial, int numPisos, int numLocalesxPiso,
                 printf("Piso: %d\n", centroComercial[i][j].piso);
                 printf("Local numero: %d\n", centroComercial[i][j].numLocal);
                 printf("Numero de empleados: %d\n", centroComercial[i][j].numEmpleados);
+                encontrado = 1;
                 break;
             }
         }
