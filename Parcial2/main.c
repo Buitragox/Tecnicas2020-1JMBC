@@ -39,14 +39,12 @@ int main(){
             break;
         case 2:
             check = 0;
-            
             do{
                 printf("Ingrese el piso: ");
                 scanf("%d", &piso);
-                piso;
-                printf("Ingrese el numero de local: ");
-                scanf("%d", &numLocal);
                 if(piso > 0 && piso <= numPisos){
+                    printf("Ingrese el numero de local: ");
+                    scanf("%d", &numLocal);
                     if(numLocal > 0 && numLocal <= numLocalesxPiso){
                         if(centroComercial[piso - 1][numLocalesxPiso - 1].estado == LIBRE){
                             printf("Ingrese el nombre del local: ");
