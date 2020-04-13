@@ -22,7 +22,7 @@ local_t ** crearCentroComercial(int numPisos, int numLocalesxPiso){
     return centroComercial;
 }
 
-void añadirLocal(local_t ** centroComercial, int piso, int numLocal, char nombre[35], int empleados){
+void aniadirLocal(local_t ** centroComercial, int piso, int numLocal, char nombre[35], int empleados){
     strcpy(centroComercial[piso - 1][numLocal - 1].nombre, nombre);
     centroComercial[piso - 1][numLocal - 1].id = piso * 1000 + numLocal;
     centroComercial[piso - 1][numLocal - 1].piso = piso;

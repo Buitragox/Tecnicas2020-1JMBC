@@ -23,7 +23,7 @@ typedef struct Local{
 local_t ** crearCentroComercial(int numPisos, int numLocalesxPiso);
 
 //Función que añade cada local poniendo los datos en su respectiva posición en la matriz
-void añadirLocal(local_t ** centroComercial, int piso, int numLocal, char nombre[35], int empleados);
+void aniadirLocal(local_t ** centroComercial, int piso, int numLocal, char nombre[35], int empleados);
 
 //Función que libera la matriz del centro comercial de la memoria
 void freeCentroComercial(local_t ** centroComercial, int numPisos);
