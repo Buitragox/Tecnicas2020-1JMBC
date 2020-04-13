@@ -104,6 +104,7 @@ int main(){
             scanf("%d", &piso);
             if(piso > 0 && piso <= numPisos){
                 total = totalEmpleados(centroComercial, piso - 1, numLocalesxPiso);
+                printf("El total de empleados es: %d\n", total);
             }
             else{
                 printf("Piso invalido");
