@@ -52,7 +52,7 @@ int main(){
                             printf("Ingrese el nombre del local: ");
                             scanf("%35s", nombre);
                             printf("Ingrese la cantidad de empleados: ");
-                            scanf("%d", empleados);
+                            scanf("%d", &empleados);
                             aniadirLocal(centroComercial, piso, numLocal, nombre, empleados);
                             check = 1;
                         }
@@ -79,7 +79,7 @@ int main(){
         
         case 4:
             printf("Ingrese el piso: ");
-            scanf("%d", piso);
+            scanf("%d", &piso);
             buscarPiso(centroComercial, numPisos, numLocalesxPiso, piso);
             break;
 
@@ -103,7 +103,7 @@ int main(){
         
         case 8:
             printf("Ingrese el piso: ");
-            scanf("%d", piso);
+            scanf("%d", &piso);
             if(piso > 0 && piso <= numPisos){
                 total = totalEmpleados(centroComercial, piso - 1, numLocalesxPiso);
             }
