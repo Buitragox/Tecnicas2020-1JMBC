@@ -18,8 +18,8 @@ int menu(){
 }
 
 int main(){
-    int numPisos, numLocalesxPiso, opcion;
-    local_t ** centroComercial;
+    int numPisos, numLocalesxPiso, opcion, piso, numLocal, check, empleados, total;
+    char nombre[35];
 	printf("Para comenzar ingresa los siguientes datos\n");
     printf("Numero de pisos del centro comercial: ");
     scanf("%d", &numPisos);
@@ -35,11 +35,11 @@ int main(){
             scanf("%d", &numPisos);
             printf("Numero de locales por piso: ");
             scanf("%d", &numLocalesxPiso);
-            local_t ** centroComercial = crearCentroComercial(numPisos, numLocalesxPiso);
+            centroComercial = crearCentroComercial(numPisos, numLocalesxPiso);
             break;
         case 2:
-            int piso, numLocal, check = 0, empleados;
-            char nombre[35];
+            check = 0;
+            
             do{
                 printf("Ingrese el piso: ");
                 scanf("%d", &piso);
@@ -53,7 +53,7 @@ int main(){
                             scanf("%35s", nombre);
                             printf("Ingrese la cantidad de empleados: ");
                             scanf("%d", empleados);
-                            añadirLocal(centroComercial, piso, numLocal, nombre, empleados);
+                            aniadirLocal(centroComercial, piso, numLocal, nombre, empleados);
                             check = 1;
                         }
                         else{
@@ -72,42 +72,36 @@ int main(){
             break;
 
         case 3:
-            char nombre[35];
             printf("Ingrese el nombre del local: ");
             scanf("%35s", nombre);
             buscarNombre(centroComercial, numPisos, numLocalesxPiso, nombre);
             break;
         
         case 4:
-            int piso;
             printf("Ingrese el piso: ");
             scanf("%d", piso);
             buscarPiso(centroComercial, numPisos, numLocalesxPiso, piso);
             break;
 
         case 5:
-            char nombre[35];
             printf("Ingrese el nombre del local: ");
             scanf("%35s", nombre);
             modificarEmpleados(centroComercial, numPisos, numLocalesxPiso, nombre, opcion);
             break;
 
         case 6:
-            char nombre[35];
             printf("Ingrese el nombre del local: ");
             scanf("%35s", nombre);
             modificarEmpleados(centroComercial, numPisos, numLocalesxPiso, nombre, opcion);
             break;
 
         case 7:
-            char nombre[35];
             printf("Ingrese el nombre del local: ");
             scanf("%35s", nombre);
             eliminarLocal(centroComercial, numPisos, numLocalesxPiso, nombre);
             break;
         
         case 8:
-            int piso, total;
             printf("Ingrese el piso: ");
             scanf("%d", piso);
             if(piso > 0 && piso <= numPisos){
