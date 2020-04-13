@@ -23,12 +23,12 @@ local_t ** crearCentroComercial(int numPisos, int numLocalesxPiso){
 }
 
 void añadirLocal(local_t ** centroComercial, int piso, int numLocal, char nombre[35], int empleados){
-    strcpy(centroComercial[piso][numLocal].nombre, nombre);
-    centroComercial[piso][numLocal].id = piso * 1000 + numLocal;
-    centroComercial[piso][numLocal].piso = piso;
-    centroComercial[piso][numLocal].numLocal = numLocal;
-    centroComercial[piso][numLocal].estado = OCUPADO;
-    centroComercial[piso][numLocal].numEmpleados = empleados;
+    strcpy(centroComercial[piso - 1][numLocal - 1].nombre, nombre);
+    centroComercial[piso - 1][numLocal - 1].id = piso * 1000 + numLocal;
+    centroComercial[piso - 1][numLocal - 1].piso = piso;
+    centroComercial[piso - 1][numLocal - 1].numLocal = numLocal;
+    centroComercial[piso - 1][numLocal - 1].estado = OCUPADO;
+    centroComercial[piso - 1][numLocal - 1].numEmpleados = empleados;
 }
 
 void freeCentroComercial(local_t ** centroComercial, int numPisos){
