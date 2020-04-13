@@ -7,7 +7,7 @@ local_t ** crearCentroComercial(int numPisos, int numLocalesxPiso){
         for(i = 0; i < numPisos; i++){
             centroComercial[i] = malloc(sizeof(local_t) * numLocalesxPiso);
             if(centroComercial[i] == NULL){
-                printf("Error reservando memoria");
+                printf("Error reservando memoria\n");
                 exit(1);
             }
             for(j = 0; j < numLocalesxPiso; j++){
@@ -16,7 +16,7 @@ local_t ** crearCentroComercial(int numPisos, int numLocalesxPiso){
         }
     }
     else{
-        printf("Error reservando memoria");
+        printf("Error reservando memoria\n");
         exit(1);
     }
     return centroComercial;
@@ -69,7 +69,7 @@ void buscarPiso(local_t ** centroComercial, int numPisos, int numLocalesxPiso, i
                 printf("Piso: %d\n", centroComercial[piso][i].piso);
                 printf("Local numero: %d\n", centroComercial[piso][i].numLocal);
                 printf("Numero de empleados: %d\n", centroComercial[piso][i].numEmpleados);
-                printf("================================");
+                printf("================================\n");
                 encontrado = 1;
             }
         }
