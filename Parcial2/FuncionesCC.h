@@ -20,7 +20,7 @@ typedef struct Local{
 } local_t;
 
 //Función que permite crear la matriz del centro comercial
-local_t crearCentroComercial(int numPisos, int numLocalesxPiso);
+local_t ** crearCentroComercial(int numPisos, int numLocalesxPiso);
 
 //Función que añade cada local poniendo los datos en su respectiva posición en la matriz
 void añadirLocal(local_t ** centroComercial, int piso, int numLocal, char nombre[35], int empleados);
