@@ -111,7 +111,7 @@ void eliminarLocal(local_t ** centroComercial, int numPisos, int numLocalesxPiso
     for(i = 0; i < numPisos; i++){
         for(j = 0; j < numLocalesxPiso; j++){
             if(strcmp(centroComercial[i][j].nombre, nombre) == 0 && centroComercial[i][j].estado == OCUPADO){
-                centroComercial[i][j].estado == LIBRE;
+                centroComercial[i][j].estado = LIBRE;
                 encontrado = 1;
                 break;
             }
