@@ -1,0 +1,17 @@
+Introducción al selection sort
+https://youtu.be/Czfz-BGiZD8
+
+Ejemplo de selection sort
+https://youtu.be/0awvIw-FtN4
+
+Implementación en C de selection sort
+https://youtu.be/nIOgo9kYULU
+
+Introducción a quick sort
+https://youtu.be/cIsZnkaj7FA
+
+Ejemplo de quick sort
+https://youtu.be/p9kTDYmo1KQ
+
+Implementación en C de quick sort
+https://youtu.be/KFJPFQ6YJ0U
