@@ -1,4 +1,5 @@
 #include "funciones.h"
+/* Código ordenado, bonito, funcional. Solo le quitaría esos while(1) que son muy feos */
 
 void agregarDia(persona lista[][MAX], int mes, int dispo[]){
 	int dia;
@@ -25,7 +26,7 @@ void agregarAnio(persona lista[][MAX], int mes, int dispo[]){
 	printf("Ingrese el anio de nacimiento\n");
     fflush(stdin);
 	scanf("%d", &anio);
-	while(1){
+	while(1){  // Luisa: en general no me gusta el while 1. Lo podrías hacer más bonito
 		if(anio >= 0 && anio <= 2020){
 			break;
 		}
