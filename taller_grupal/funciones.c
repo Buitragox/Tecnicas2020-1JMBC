@@ -22,13 +22,14 @@ void agregarDia(persona lista[][MAX], int mes, int dispo[]){
 }
 
 void agregarAnio(persona lista[][MAX], int mes, int dispo[]){
-	int anio;
+	int anio, seguir = 0;
 	printf("Ingrese el anio de nacimiento\n");
     fflush(stdin);
 	scanf("%d", &anio);
-	while(1){  // Luisa: en general no me gusta el while 1. Lo podrías hacer más bonito
+	while(!seguir){  // Luisa: en general no me gusta el while 1. Lo podrías hacer más bonito
+    //Jhoan: Corregido con una variable bandera
 		if(anio >= 0 && anio <= 2020){
-			break;
+			seguir = 1;
 		}
 		printf("Anio invalido\n");
 		printf("Ingrese el anio de nacimiento\n");
